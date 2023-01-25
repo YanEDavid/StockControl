@@ -12,4 +12,4 @@ def registerPage(request):
 
     context = {'form': form}
 
-    return render(request, 'conta/register.html', context)
+    return render(request, 'conta/cadastro.html', context)
