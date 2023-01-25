@@ -32,7 +32,7 @@
   <div class="container-fluid">
 
 
-   <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="#">
       <img src="svg/box.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       Constrole de Estoque
     </a>
@@ -49,30 +49,31 @@
 <h1>Cadastro</h1>
 
 
-<form class="row g-3">
+<form class="row g-3" method="POST">
+  {% csrf_token %}
   <div class="col-md-6">
     <label for="name" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome">
+    {{form.first_name}}
   </div>
   <div class="col-md-6">
     <label for="lastname" class="form-label">Sobrenome</label>
-    <input type="text" class="form-control" id="sobrenome">
+    {{form.last_name}}
   </div>
   <div class="col-md-12">
     <label for="user" class="form-label">Usuário</label>
-    <input type="text" class="form-control" id="user">
+    {{form.username}}
   </div>
   <div class="col-md-12">
     <label for="password" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="password">
+    {{form.password1}}
   </div>
   <div class="col-md-12">
     <label for="confirm-password" class="form-label">Confirmar Senha</label>
-    <input type="password" class="form-control" id="confirm-password">
+    {{form.password2}}
   </div>
   <div class="col-md-12">
     <label for="email" class="form-label">E-mail</label>
-    <input type="email" class="form-control" id="email" placeholder="email@email.com">
+    {{form.email}}
   </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Cadastrar</button>
