@@ -9,8 +9,8 @@ class CreateUserForm(UserCreationForm):
         self.fields['last_name'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"sobrenome", 'required':"true"})
         self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"user", 'required':"true"})
         self.fields['email'].widget = forms.TextInput(attrs={'placeholder': 'nome@email.com', 'class': 'form-control', 'id':"email", 'required':"true"})
-        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'id':"confirm-password"})
-        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'id':"password"})
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'id':"password"})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'id':"confirm-password"})
 
     class Meta:
         model = User
