@@ -9,7 +9,8 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-
+    
+    form = CreateUserForm()
     context = {'form': form}
 
     return render(request, 'cadastro.html', context)

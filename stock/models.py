@@ -1,14 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class Produto(models.Model):
-    nome_produto = models.CharField('Nome do Produto', max_length=50, null=False)
-    descricao = models.CharField('Descrição', max_length=250)
-    quantidade = models.IntegerField('Quantidade', null=False, default=0)
-    valor_bruto = models.FloatField('Valor Bruto', null=False)
-    valor_liquido = models.FloatField('Valor Líquido', null=False)
+MOVIMENTO = (
+    ('e', 'entrada'),
+    ('s', 'saida'),
+)
 
-    def __str__(self):
-        return self.nome_produto
-    
-    def save(self, *args, **kwargs):
-        super(Produto, self).save(*args, **kwargs)
+class Estoque(models.Model):
+    funcionario = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    movimento = models.CharField(max_length=1, choices=MOVIMENTO, blank=True)
+
+    class Meta:
+        ordering = ('funcionario',)
