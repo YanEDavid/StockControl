@@ -17,5 +17,5 @@ from django.urls import path
 from .views import registerPage
 
 urlpatterns = [
-    path('registro/', registerPage, name="cadastro"),
+    path('cadastro/', registerPage, name="cadastro"),
 ]
