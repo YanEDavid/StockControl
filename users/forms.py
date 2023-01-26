@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 class CreateUserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserCreationForm, self).__init__(*args, **kwargs)
-        self.fields['first_name'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"nome"})
-        self.fields['last_name'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"sobrenome"})
-        self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"user"})
-        self.fields['email'].widget = forms.TextInput(attrs={'placeholder': 'email@email.com', 'class': 'form-control', 'id':"password"})
-        self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'form-control', 'id':"confirm-password"})
-        self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'form-control', 'id':"email"})
+        self.fields['first_name'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"nome", 'required':"true"})
+        self.fields['last_name'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"sobrenome", 'required':"true"})
+        self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control', 'id':"user", 'required':"true"})
+        self.fields['email'].widget = forms.TextInput(attrs={'placeholder': 'nome@email.com', 'class': 'form-control', 'id':"email", 'required':"true"})
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'id':"confirm-password"})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'id':"password"})
 
     class Meta:
         model = User
