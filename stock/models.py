@@ -10,7 +10,7 @@ MOVIMENTO = (
 
 class Estoque(models.Model):
     funcionario = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
-    nf = models.PositiveIntegerField('Nota fiscal', null = True, Blank = True)
+    nf = models.PositiveIntegerField('Nota fiscal', null = True, blank = True)
     movimento = models.CharField(max_length=1, choices=MOVIMENTO, blank=True)
     criado = models.DateTimeField(auto_now_add = True)
     atualizado = models.DateTimeField(auto_now=True)
