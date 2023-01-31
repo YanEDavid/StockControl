@@ -5,11 +5,11 @@ from django.db.models import Q
 
 def lista_produto(request):
     template_name = 'lista_produto.html'
-    objects = Produto.objects.all()
+    produto = Produto.objects.all()
     search = request.GET.get('search')
     if search:
-        objects = objects.filter(produto__icontains = search)
-    context = {'object_list': objects}
+        produto = produto.filter(produto__icontains = search)
+    context = {'lista_produto': produto}
     return render(request, template_name, context)
 
 class ListaProduto(ListView):

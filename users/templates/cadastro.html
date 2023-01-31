@@ -1,19 +1,9 @@
 {% load static %}
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controle de Estoque</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'svgs/box.svg' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+{% include "base.html" %}
 
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
-  </head>
-  <body>
+<!-- <link href="{% static 'css/style.css' %}" rel="stylesheet"> -->
+<body>
     
 
 <div class="collapse" id="navbarToggleExternalContent">
@@ -84,6 +74,25 @@
   </div>
 </form>
     </div>
+
+<!-- <script type="text/javascript">
+   (() => {
+      'use strict'
+
+      const forms = document.querySelectorAll('.needs-validation')
+
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+</script> -->
 
     <script src="{% static '/js/script.js' %}">
   </body>
