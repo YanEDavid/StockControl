@@ -10,17 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
 
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <style type="text/css">
-      
-      .container{
-
-    font-family: 'Nunito';
-    font-style: normal;
-    
-
-      }
-
-</style>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
   </head>
   <body>
@@ -95,24 +85,6 @@
 </form>
     </div>
 
-    <script>
-      (() => {
-      'use strict'
-
-      const forms = document.querySelectorAll('.needs-validation')
-
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-    </script>
-
+    <script src="{% static '/js/script.js' %}">
   </body>
 </html>
