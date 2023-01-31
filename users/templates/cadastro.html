@@ -1,7 +1,11 @@
 {% load static %}
+
+
 {% include "base.html" %}
-  <body>
-    
+
+<script src="{% static 'js/script.js' %}"></script>
+
+<body>
 
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
@@ -67,29 +71,10 @@
     {{form.email}}
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" onclick="valida()" class="btn btn-primary">Cadastrar</button>
   </div>
 </form>
     </div>
-
-    <script>
-      (() => {
-      'use strict'
-
-      const forms = document.querySelectorAll('.needs-validation')
-
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-    </script>
 
   </body>
 </html>
