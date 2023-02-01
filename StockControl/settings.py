@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_l57-7k^$ksw6k4p#-#xk1ppi7m$$a*^kh)v9(0g2f8-7ki$b^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['stockcontrol-develop.up.railway.app', 'localhost', '127.0.0.1']
 
