@@ -1,30 +1,11 @@
 {% load static %}
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controle de Estoque</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'svgs/box.svg' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
 
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <style type="text/css">
-      
-      .container{
+{% include "base.html" %}
 
-    font-family: 'Nunito';
-    font-style: normal;
-    
+<script src="{% static 'js/script.js' %}"></script>
 
-      }
-
-</style>
-
-  </head>
-  <body>
-    
+<body>
 
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
@@ -90,29 +71,10 @@
     {{form.email}}
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" onclick="valida()" class="btn btn-primary">Cadastrar</button>
   </div>
 </form>
     </div>
-
-    <script>
-      (() => {
-      'use strict'
-
-      const forms = document.querySelectorAll('.needs-validation')
-
-      Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-    </script>
 
   </body>
 </html>
