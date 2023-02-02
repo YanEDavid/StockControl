@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.views.generic import ListView
 from django.db.models import Q
 from django.contrib.auth.models import User
+from django.shortcuts import redirect
 
 
 
@@ -17,9 +18,9 @@ def registerPage(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Cadastrado com sucesso!')
+            return redirect('/usuario/list')
         else:
-            messages.error(request, 'Ocorreu um erro!')            
-
+            messages.error(request, form.errors)            
         form = CreateUserForm()    
     
     context = {'form': form}
