@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://stockcontrol-develop.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['*']
 
 CSRF_COOKIE_DOMAIN = 'stockcontrol-develop.up.railway.app'
 
