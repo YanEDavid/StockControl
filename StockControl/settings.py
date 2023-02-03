@@ -28,9 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://stockcontrol-develop.up.railway.app, https://web-production-2b51.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-2b51.up.railway.app']
 
-CSRF_COOKIE_DOMAIN = 'stockcontrol-develop.up.railway.app'
+CSRF_COOKIE_DOMAIN = 'web-production-2b51.up.railway.app'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
