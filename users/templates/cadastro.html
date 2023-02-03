@@ -7,14 +7,14 @@
 
 <div class="container" style="margin-top:5%;">
 
-
- {% for message in messages %}
-     {% if message.tags == 'error' %}
-    <div class="alert alert-danger" role="alert">
-            {{message}}
-    </div>
+  {% for message in messages %}
+    {% if message.tags == 'error' %}
+      <div class="alert alert-danger" role="alert">
+        {{message.message.password2}}
+      </div>
     {% endif %}
   {% endfor %}
+   
 
 <h1>Cadastro</h1>
 
