@@ -5,9 +5,10 @@ from django.views.generic import ListView
 from django.db.models import Q
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 
-
+#<!----------------------AUTENTICAÇÃO NÃO NECESSÁRIA----------------------!>#
 
 def registerPage(request):
     form = CreateUserForm()
@@ -26,6 +27,9 @@ def registerPage(request):
     context = {'form': form}
     return render(request, 'cadastro.html', context)
 
+#<!----------------------AUTENTICAÇÃO NECESSÁRIA----------------------!>#
+
+@login_required(login_url='/usuario/login')
 class ListaUsuario(ListView):
     model = User
     template_name = 'list_users.html'
