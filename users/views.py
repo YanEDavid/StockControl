@@ -26,6 +26,7 @@ def registerPage(request):
     context = {'form': form}
     return render(request, 'cadastro.html', context)
 
+
 class ListaUsuario(ListView):
     model = User
     template_name = 'list_users.html'
