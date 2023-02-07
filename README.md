@@ -16,16 +16,16 @@ Passos a serem reproduzidos
     ~~~cmd
     venv\Scripts\activate
     ~~~
-  - Assim que entrar na virtualenv, instalar o Django
+  - Assim que entrar na virtualenv, instalar toda as bibliotecas que serão utilizadas
     ~~~python
-    pip install django
+    pip install -r requirements.txt
     ~~~
   - Após instalar o django, atualizar as migrações
     ~~~python
-    py manage.py migrate
+    py manage.py makemigrations
     ~~~
     ~~~python
-    py manage.py makemigrations
+    py manage.py migrate
     ~~~
   - Criar um administrador
     ~~~python
