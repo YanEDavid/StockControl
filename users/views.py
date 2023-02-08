@@ -25,7 +25,7 @@ def registerPage(request):
         form = CreateUserForm()    
     
     context = {'form': form}
-    return render(request, 'cadastro.html', context)
+    return render(request, 'registration/cadastro.html', context)
 
 #<!----------------------AUTENTICAÇÃO NECESSÁRIA----------------------!>#
 
