@@ -5,9 +5,10 @@ from django.views.generic import ListView
 from django.db.models import Q
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
-
-
+#<!----------------------AUTENTICAÇÃO NÃO NECESSÁRIA----------------------!>#
 
 def registerPage(request):
     form = CreateUserForm()
@@ -24,9 +25,11 @@ def registerPage(request):
         form = CreateUserForm()    
     
     context = {'form': form}
-    return render(request, 'cadastro.html', context)
+    return render(request, 'registration/cadastro.html', context)
 
+#<!----------------------AUTENTICAÇÃO NECESSÁRIA----------------------!>#
 
+@method_decorator(login_required, name='dispatch')
 class ListaUsuario(ListView):
     model = User
     template_name = 'list_users.html'
@@ -35,3 +38,4 @@ class ListaUsuario(ListView):
     def get_queryset(self):
         queryset = super(ListaUsuario, self).get_queryset()
         return queryset
+    

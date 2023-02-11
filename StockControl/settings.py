@@ -26,11 +26,11 @@ SECRET_KEY = 'django-insecure-_l57-7k^$ksw6k4p#-#xk1ppi7m$$a*^kh)v9(0g2f8-7ki$b^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['stockcontrol-develop.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://stockcontrol-develop.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-2b51.up.railway.app']
 
-CSRF_COOKIE_DOMAIN = 'stockcontrol-develop.up.railway.app'
+CSRF_COOKIE_DOMAIN = 'web-production-2b51.up.railway.app'
 
 CORS_ORIGIN_ALLOW_ALL = True
 

@@ -1,9 +1,8 @@
 from django.urls import path, include
-from .views import registerPage
-from users import views
+from .views import registerPage, ListaUsuario
 
 urlpatterns = [
     path('usuario/cadastro/', registerPage, name="cadastro"),
-    path('usuario/list/', views.ListaUsuario.as_view(), name="list_users"),
+    path('usuario/list/', ListaUsuario.as_view(), name="list_users"),
     path('usuario/', include("django.contrib.auth.urls"), name="login"),
 ]
