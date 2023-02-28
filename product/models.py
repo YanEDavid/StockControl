@@ -2,14 +2,14 @@ from django.db import models
 
 class Produto(models.Model):
     nome_produto = models.CharField('Nome do Produto', max_length=50, null=False)
-    descricao = models.CharField('Descrição', max_length=250)
-    valor_bruto = models.DecimalField('Valor Bruto', null=False, max_digits=7, decimal_places=2)
+    descricao = models.CharField('Descrição', max_length=250, null=True, blank=True)
+    valor_bruto = models.DecimalField('Valor Bruto', null=True, max_digits=7, decimal_places=2)
     valor_liquido = models.DecimalField('Valor Líquido', null=False, max_digits=7, decimal_places=2)
     categoria = models.ForeignKey(
     'Categoria',
-    on_delete=models.PROTECT,
-    null=False,
-    blank=False
+    on_delete=models.CASCADE,
+    null=True,
+    blank=True
     )
 
     class Meta:
