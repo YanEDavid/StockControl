@@ -22,7 +22,7 @@ class Produto(models.Model):
         super(Produto, self).save(*args, **kwargs)
 
 class Categoria(models.Model):
-    categoria = models.CharField('Categoria', null=False, max_length=128, unique=True)
+    categoria = models.CharField('Categoria', null=True, max_length=128, unique=True)
 
     class Meta:
         ordering = ('categoria',)

@@ -1,0 +1,20 @@
+.row{
+        height: 50rem;
+      }
+      .card{
+        align-items: center;
+      }
+      svg{
+        margin: 1rem;
+      }
+      .btn{
+        color: white;
+        width: 10rem;
+        background: #FFCA32;
+        border-color: #FFCA32;
+      }
+      .btn:hover{
+        color: white;
+        background: #ffd02a;
+        border-color: #FFCA32;
+      }
