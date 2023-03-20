@@ -1,4 +1,4 @@
-"""StockControl URL Configuration
+"""core URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 
 urlpatterns = [
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
+    path('', include('admin_gradient.urls')),
     path('', include('users.urls')),
     path('', include('stock.urls')),
     path('', include('base.urls')),
