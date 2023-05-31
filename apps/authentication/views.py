@@ -7,26 +7,34 @@ Copyright (c) 2019 - present AppSeed.us
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, SignUpForm
+from django.contrib.sessions.backends.base import SessionBase
 
 
 def login_view(request):
     form = LoginForm(request.POST or None)
-
     msg = None
 
     if request.method == "POST":
-
         if form.is_valid():
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("/")
+                # Check if there's a stored URL in the session
+                redirect_url = request.session.get('redirect_url', '/')
+                # Remove the stored URL from the session
+                request.session.pop('redirect_url', None)
+                return redirect(redirect_url)
             else:
                 msg = 'Invalid credentials'
         else:
             msg = 'Error validating the form'
+
+    # Store the intended URL in the session
+    if request.method == "GET" and 'next' in request.GET:
+        redirect_url = request.GET.get('next')
+        request.session['redirect_url'] = redirect_url
 
     return render(request, "accounts/login.html", {"form": form, "msg": msg})
 
